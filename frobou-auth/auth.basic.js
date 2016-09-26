@@ -1,8 +1,8 @@
-(function (angular) {
+(function () {
     'use strict';
     angular.module('frobou.auth', []);
 })();
-(function(angular) {
+(function() {
     'use strict';
     angular.module('frobou.auth')
         .service('AuthBasicService', ['$http', 'md5', '$base64',
@@ -55,4 +55,4 @@
                 };
             }
         ]);
-})(angular);
+})();
