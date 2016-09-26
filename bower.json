@@ -1,0 +1,22 @@
+{
+    "name": "frobou-angular-parts",
+    "authors": [
+        "Fabio Pimenta <blobs@frobou.com.br>"
+    ],
+    "description": "micro projetos para uso no angularjs",
+    "license": "MIT",
+    "homepage": "frobou.com.br",
+    "private": true,
+    "ignore": [
+        "**/.*",
+        "node_modules",
+        "bower_components",
+        "test",
+        "tests"
+    ],
+    "dependencies": {
+        "angularjs": "latest",
+        "angular-md5": "latest",
+        "angular-base64": "latest"
+    }
+}
