@@ -29,8 +29,8 @@
 
                 var createHeaders = function (config) {
                     var headers = {Authorization: 'Basic ' + $base64.encode(config.username + ':' + config.password)};
-                    angular.forEach(values, function (value, key) {
-                        headers.key = value;
+                    angular.forEach(config.headers, function (value, key) {
+                        headers[key] = value ;
                     });
                     return headers;
                 };
