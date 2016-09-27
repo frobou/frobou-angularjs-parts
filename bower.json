@@ -16,6 +16,7 @@
     "dependencies": {
         "angularjs": "latest",
         "angular-md5": "latest",
-        "angular-base64": "latest"
+        "angular-base64": "latest",
+        "angular-cookies": "latest"
     }
 }

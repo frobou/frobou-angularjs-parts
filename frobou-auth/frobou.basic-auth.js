@@ -1,11 +1,11 @@
 (function () {
     'use strict';
-    angular.module('frobou.auth', []);
+    angular.module('frobou.parts', []);
 })();
 (function() {
     'use strict';
-    angular.module('frobou.auth')
-        .service('AuthBasicService', ['$http', 'md5', '$base64',
+    angular.module('frobou.parts')
+        .service('FrobouBasicAuthService', ['$http', 'md5', '$base64',
             function ($http, md5, $base64) {
 
                 var verifyConfig = function (config) {
