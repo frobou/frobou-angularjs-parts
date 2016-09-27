@@ -1,22 +1,21 @@
 (function () {
     'use strict';
-    angular.module('frobou.parts', []);
-})();
-(function () {
-    'use strict';
     angular.module('frobou.parts')
         .service('FrobouCookieService',
             ['$cookies',
                 function ($cookies) {
-                    var cookieName = 'radius';
+                    var _cookieName;
+                    this.setCookieName = function (name) {
+                        _cookieName = name;
+                    };
                     this.getCookieAsObject = function () {
-                        return $cookies.getObject(cookieName);
+                        return $cookies.getObject(_cookieName);
                     };
                     this.setCookieAsObject = function (data) {
-                        $cookies.putObject(cookieName, data);
+                        $cookies.putObject(_cookieName, data);
                     };
                     this.remove = function () {
-                        $cookies.remove(cookieName);
+                        $cookies.remove(_cookieName);
                     };
                 }
             ]);
