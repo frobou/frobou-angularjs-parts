@@ -1,4 +1,4 @@
-(function() {
+(function () {
     'use strict';
     angular.module('frobou.parts')
         .service('FrobouBasicAuthService', ['$http', 'md5', '$base64',
@@ -26,12 +26,12 @@
                 var createHeaders = function (config) {
                     var headers = {Authorization: 'Basic ' + $base64.encode(config.username + ':' + config.password)};
                     angular.forEach(config.headers, function (value, key) {
-                        headers[key] = value ;
+                        headers[key] = value;
                     });
                     return headers;
                 };
 
-                this.login = function (config) {
+                var headerMount = function (config) {
                     /* valida se o objeto de configuracao esta correto */
                     if (!verifyConfig(config)) {
                         return false;
@@ -39,15 +39,25 @@
                     if (config.hash === true) {
                         config.password = md5.createHash(config.password);
                     }
-                    return $http({
+                    return {
                         method: config.method.toUpperCase(),
                         url: config.url,
                         headers: createHeaders(config)
-                    }).then(function (response) {
-                        return angular.fromJson(response.data);
-                    }, function (response) {
-                        return angular.fromJson(response.data);
-                    });
+                    };
+                };
+
+                this.mountHeader = headerMount;
+
+                this.login = function (config) {
+                    var headers = headerMount(config);
+                    return $http(headers)
+                        .then(function (response) {
+                            console.log(response);
+                            return angular.fromJson(response.data);
+                        }, function (response) {
+                            console.log(response);
+                            return angular.fromJson(response.data);
+                        });
                 };
             }
         ]);
