@@ -45,7 +45,7 @@
                         headers: createHeaders(config)
                     }).then(function (response) {
                         return angular.fromJson(response.data);
-                    }).then(function (response) {
+                    }, function (response) {
                         return angular.fromJson(response.data);
                     });
                 };
