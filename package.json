@@ -1,0 +1,15 @@
+{
+  "name": "frobou-angular-parts",
+  "version": "1.0.0",
+  "description": "micro projetos para uso no angularjs",
+  "main": "frobou.parts.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github:frobou/frobou-angularjs-parts.git"
+  },
+  "author": "Fabio Pimenta",
+  "license": "ISC"
+}
